@@ -1,0 +1,175 @@
+/* Global Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-size: 2.6rem;
+}
+li,
+button,
+label,
+input,
+p {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 4.8rem;
+}
+h3 {
+  font-size: 3rem;
+  font-weight: normal;
+}
+h4,
+h5 {
+  font-size: 2.8rem;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+
+button:hover {
+  background: #9c1a14;
+  color: white;
+  border-bottom-right-radius: 0%;
+}
+/* Nav  With Home Section */
+
+.main-head {
+  background: #6a6c57;
+  color: white;
+  position: sticky;
+  top: 0px;
+  z-index: 3;
+}
+nav {
+  min-height: 10vh;
+  display: flex;
+  width: 90%;
+  margin: auto;
+  padding: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav ul {
+  display: flex;
+  flex: 1 1 40rem;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+nav ul li {
+  position: relative;
+}
+nav ul li:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: -7px;
+  height: 4px;
+  width: 0%;
+  background: #9c1a14;
+  opacity: 0;
+  transition: all 0.4s linear;
+}
+nav ul li:hover:after {
+  opacity: 1;
+  width: 100%;
+}
+#logo {
+  flex: 2 1 40rem;
+  font-family: "Orelega One", cursive;
+  font-weight: 400;
+  letter-spacing: 0.5rem;
+  user-select: none;
+}
+.btn-home {
+  padding: 2rem 6rem;
+  background: #bbbb93;
+  border: none;
+  color: #9c1a14;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  letter-spacing: 0.4rem;
+  border-bottom-right-radius: 90%;
+}
+.off-price {
+  padding: 1.2rem 5rem;
+  background: #6a6c57;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: background 0.5s ease-in-out;
+  letter-spacing: 0.4rem;
+  border: 0.1rem solid;
+}
+.home {
+  min-height: 90vh;
+
+  background: linear-gradient(
+      180deg,
+      rgba(110, 111, 91, 0.5747432762167367) 27%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    url("./img/landing-page.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.home h3 {
+  padding: 5rem;
+  color: rgb(233, 227, 227);
+}
+
+/* Media Query */
+@media screen and (max-width: 1160px) {
+  .off-price {
+    display: none;
+  }
+}
+@media screen and (max-width: 933px) {
+  .home h2 {
+    font-size: 4rem;
+  }
+  .home h3 {
+    font-size: 3rem;
+  }
+  nav {
+    text-align: center;
+  }
+  #logo {
+    padding-bottom: 1rem;
+    padding-right: 2rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .home h2 {
+    font-size: 3.3rem;
+  }
+  .home h3 {
+    font-size: 2.5rem;
+  }
+  #logo {
+    padding-right: 2rem;
+  }
+}
