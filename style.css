@@ -7,6 +7,7 @@
 }
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -96,6 +97,7 @@ nav ul li:hover:after {
   user-select: none;
 }
 .btn-home {
+  margin-top: 2rem;
   padding: 2rem 6rem;
   background: #bbbb93;
   border: none;
@@ -117,9 +119,8 @@ nav ul li:hover:after {
   letter-spacing: 0.4rem;
   border: 0.1rem solid;
 }
-.home {
+#home {
   min-height: 90vh;
-
   background: linear-gradient(
       180deg,
       rgba(110, 111, 91, 0.5747432762167367) 27%,
@@ -136,22 +137,143 @@ nav ul li:hover:after {
   align-items: center;
   text-align: center;
 }
-.home h3 {
-  padding: 5rem;
+#home h3 {
+  padding: 3rem;
   color: rgb(233, 227, 227);
 }
 
+/* Locations SECTION */
+
+#locations {
+  min-height: 100vh;
+  display: flex;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+.img-locations {
+  background-color: #6a6c57;
+  flex: 1 1 40rem;
+  position: relative;
+}
+.khode-img {
+  animation: cityanim 30s infinite alternate ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.locations-head {
+  background: #bbbb93;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 2 1 20rem;
+}
+.locations-head h1 {
+  font-size: 4.8rem;
+  text-align: center;
+  margin: 2rem 0rem 5rem 0rem;
+  text-decoration: underline;
+  text-decoration-thickness: 0.5rem;
+}
+.locations-head h2 {
+  padding: 1rem 2rem;
+  font-size: 4rem;
+}
+.locations-head h2::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f101";
+  margin-right: 1rem;
+}
+.locations-head p {
+  padding: 1rem 2rem;
+  font-size: 2.3rem;
+  background: linear-gradient(#131c27, #9c1a14);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.img-locations .text-left-1,
+.text-right-1 {
+  font-size: 4rem;
+}
+/*Animation for img in Location Section*/
+@keyframes cityanim {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
 /* Media Query */
-@media screen and (max-width: 1160px) {
-  .off-price {
+@media screen and (min-width: 1160px) {
+  .img-locations .text-top,
+  .text-left-1,
+  .text-right-1 {
     display: none;
   }
 }
+@media screen and (max-width: 1160px) {
+  html {
+    font-size: 60%;
+  }
+  /* Responsive for Home*/
+  .off-price {
+    display: none;
+  }
+  .locations-head {
+    display: none;
+  }
+  /*Responsive for Locations*/
+
+  .img-locations {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 10rem 60rem;
+    grid-template-areas:
+      " . top-center . "
+      "left-1 img right-1"
+      "left-2 . right-2";
+  }
+  .img-locations .text-top {
+    grid-area: top-center;
+    justify-self: center;
+    margin: 3rem 0rem;
+  }
+  .img-locations .text-top h2 {
+    text-decoration: underline;
+    text-decoration-thickness: 0.5rem;
+  }
+  .img-locations .text-left-1 {
+    grid-area: left-1;
+    margin-top: 15rem;
+    color: #bbbb93;
+  }
+  .img-locations .text-left-1 h2 {
+    font-size: 4rem;
+    color: black;
+  }
+  .img-center {
+    grid-area: img;
+    align-self: center;
+    justify-self: center;
+  }
+  .img-locations .text-right-1 {
+    grid-area: right-1;
+    margin-top: 15rem;
+    color: #bbbb93;
+  }
+  .img-locations .text-right-1 h2 {
+    font-size: 4rem;
+    color: black;
+  }
+}
 @media screen and (max-width: 933px) {
-  .home h2 {
+  /* Responsive for Home*/
+  #home h2 {
     font-size: 4rem;
   }
-  .home h3 {
+  #home h3 {
     font-size: 3rem;
   }
   nav {
@@ -161,13 +283,22 @@ nav ul li:hover:after {
     padding-bottom: 1rem;
     padding-right: 2rem;
   }
+  /*Responsive for Locations*/
+  .img-locations {
+    display: none;
+  }
+  .locations-head {
+    display: block;
+  }
+}
+@media screen and (max-width: 813px) {
+  html {
+    font-size: 50%;
+  }
 }
 @media screen and (max-width: 500px) {
-  .home h2 {
-    font-size: 3.3rem;
-  }
-  .home h3 {
-    font-size: 2.5rem;
+  html {
+    font-size: 45%;
   }
   #logo {
     padding-right: 2rem;
