@@ -198,6 +198,7 @@ nav ul li:hover:after {
   background: linear-gradient(var(--color-heading), var(--color-tertiary));
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 .img-locations .text-left-1,
 .text-right-1 {
@@ -303,7 +304,6 @@ nav ul li:hover:after {
   background: var(--color-primary);
   color: var(--color-body);
   padding: 6px 10px;
-  font-weight: 600;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
 }
 .card:hover h4,
